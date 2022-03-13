@@ -1,6 +1,7 @@
 const Joi = require('joi').defaults((schema) => schema.options({
     allowUnknown: false
-  }));
+  })).extend(require('@joi/date'));
+
 
 module.exports = {
    
