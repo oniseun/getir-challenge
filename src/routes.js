@@ -12,12 +12,12 @@ module.exports = function(app) {
 ///////////////////////
 // HEALTH CHECK
 ///////////////////////
-app.get('/',        HealthController.info)
-app.get('/info',    HealthController.info)
-app.get('/ping',    HealthController.ping)
-app.get('/health',  HealthController.health)
+app.get('/api/v1/',        HealthController.info)
+app.get('/api/v1/info',    HealthController.info)
+app.get('/api/v1/ping',    HealthController.ping)
+app.get('/api/v1/health',  HealthController.health)
 
-app.post('/find/record', validator.body(RecordSchema.body), RecordController.findRecord);
+app.post('/api/v1/find/record', validator.body(RecordSchema.body), RecordController.findRecord);
 
 
 

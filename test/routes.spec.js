@@ -26,10 +26,10 @@ const testRecords = [
 simple.mock(RecordHelper, 'findRecord', () => Promise.resolve(testRecords));
 
 
-describe('GET /info', function() {
+describe('GET /api/v1/info', function() {
     it('responds with 200 status and json', function(done) {
       request(app)
-        .get('/info')
+        .get('/api/v1/info')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(StatusCodes.OK)
@@ -43,10 +43,10 @@ describe('GET /info', function() {
     });
   }).timeout(TIMEOUT)
 
-  describe('GET /ping', function() {
+  describe('GET api/v1/ping', function() {
     it('responds with 200 status and true', function(done) {
       request(app)
-        .get('/ping')
+        .get('/api/v1/ping')
         .set('Accept', 'text/html')
         .expect('Content-Type', /json/)
         .expect(StatusCodes.OK)
@@ -58,10 +58,10 @@ describe('GET /info', function() {
   }).timeout(TIMEOUT)
 
 
-describe('POST /find/record', function() {
+describe('POST api/v1/find/record', function() {
   it('Incomplete input, fails with 400 BAD_REQUEST , INVALID_INPUT', function(done) {
     request(app)
-      .post('/find/record')
+      .post('/api/v1/find/record')
       .send({
         endDate: '30004',
       })
@@ -78,7 +78,7 @@ describe('POST /find/record', function() {
   
   it('Complete Input with invalid payload, fails with 400 BAD_REQUEST , INVALID_INPUT', function(done) {
       request(app)
-        .post('/find/record')
+        .post('/api/v1/find/record')
         .send({
           startDate: '30004',
           endDate: '30004',
@@ -98,7 +98,7 @@ describe('POST /find/record', function() {
 
     it('Complete Input with valid payload but extra property, fails with 400 BAD_REQUEST , INVALID_INPUT', function(done) {
       request(app)
-        .post('/find/record')
+        .post('/api/v1/find/record')
         .send({
             startDate: "2016-01-26",
             endDate: "2018-02-02",
@@ -119,7 +119,7 @@ describe('POST /find/record', function() {
 
     it('Complete Input with valid payload, returns 200 OK, SUCCESS', function(done) {
       request(app)
-        .post('/find/record')
+        .post('/api/v1/find/record')
         .send({
             startDate: "2016-01-26",
             endDate: "2018-02-02",
