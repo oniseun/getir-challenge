@@ -9,6 +9,9 @@ provided MongoDB collection and return the results in the requested format.
 # install dependencies
 $ yarn install
 
+# create .env file
+> create .env file from .envsample and update the MONGO_URL to your prefered mongodb conncetion string
+
 # serve with hot reload at localhost:3000
 $ yarn dev
 

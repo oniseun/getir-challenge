@@ -10,12 +10,10 @@
  require('mongoose-long')(mongoose)
 
 const schema = mongoose.Schema({
-    clientId: { type: Number, required: true},
-    name: { type: String,  required: true },
-    networkProvider: {type: String, required: true},
-    phoneNumber: { type: String },
-    isDeleted: { type: Boolean, default: false }
-}, { timestamps: true });
+    key: { type: String, required: true},
+    createdAt: { type: Date, required: true},
+    counts: { type: [Number] }
+});
 
 schema.set('toJSON', {
 transform: function(doc, ret,) {
