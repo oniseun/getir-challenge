@@ -4,7 +4,7 @@ const Joi = require('joi').defaults((schema) => schema.options({
 
 module.exports = {
    
-        params : Joi.object({
+        body : Joi.object({
             startDate: Joi.date().format('YYYY-MM-DD').utc(),
             endDate: Joi.date().format('YYYY-MM-DD').utc(),
             minCount:Joi.number(),

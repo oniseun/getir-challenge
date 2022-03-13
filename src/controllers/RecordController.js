@@ -4,24 +4,20 @@ const AppResponse = require('../models/response/AppResponse')
 const enums = require('../config/enums')
 
 class RecordController {
-
-
-  constructor(model, schema) {
-    this.model = model;
-
-  }
   
-  findRecord(req, res) {
+  static findRecord(req, res) {
   
-    const { params: { clientId }, query } = req
+    const { body } = req
   
-    return RecordHelper.findRecord(this.model, this.schema.find.searchFields, clientId, query )
-      .then((result) => {
-        const { items, meta } = result 
-        return res.status(200).json(new AppResponse(0, enums.RESPONSE_MSG.SUCCESS, items, [], meta ))
+    return RecordHelper.findRecord({ ...body })
+      .then((items) => {
+        if (items.length === 0) {
+          return res.status(404).json(new AppResponse( enums.RESPONSE_CODE.NOT_FOUND, enums.RESPONSE_MSG.NOT_FOUND, [] ))
+        }
+        return res.status(200).json(new AppResponse(enums.RESPONSE_CODE.SUCCESS, enums.RESPONSE_MSG.SUCCESS, items))
       })
       .catch((err) => {
-        return res.status(404).json(new AppResponse( -1, enums.RESPONSE_MSG.FAILED, [err] ))
+        return res.status(503).json(new AppResponse( enums.RESPONSE_CODE.FAILED, enums.RESPONSE_MSG.FAILED, [err] ))
       });
   }
   
