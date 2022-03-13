@@ -33,4 +33,16 @@ $ yarn dev
 $ yarn prod
 
 # Live Deployed version on heroku
-$ https://getir-challenge-nodejs.herokuapp.com/
+
+$ GET https://getir-challenge-nodejs.herokuapp.com/api/v1/health
+
+
+
+$ POST https://getir-challenge-nodejs.herokuapp.com/api/v1/find/record
+
+$    {
+$       "startDate": "2016-01-26",
+$        "endDate": "2018-02-02",
+$        "minCount": 2700,
+$        "maxCount": 3000
+$    }
