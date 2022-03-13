@@ -1,0 +1,6 @@
+ENV=development
+PORT=3000
+MONGODB_URL=mongodb://localhost:27017/beneficiaryservice
+MONGODB_CON_POOL_SIZE=5
+CONNECTIVITY_CHECK_URL=https://www.google.com/
+APP_LOG_LEVEL=debug

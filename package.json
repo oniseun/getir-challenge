@@ -1,0 +1,35 @@
+{
+  "name": "getir-challenge",
+  "version": "1.0.0",
+  "description": "create a RESTful API with a single endpoint that fetches the data in the provided MongoDB collection and return the results in the requested format.",
+  "main": "app.js",
+  "scripts": {
+    "eslint": "eslint ./src --fix",
+    "test": "echo \"Please run all UNIT tests with 'yarn testUnit' task or all ACCEPTANCE tests with 'yarn testAcceptance' \"",
+    "dev": "npm run eslint && export NODE_ENV=development && nodemon -r ./src/server.js",
+    "prod": "export NODE_ENV=production && node ./src/server.js"
+  },
+  "author": "seunoni34@gmail.com",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-node": "^11.0.0",
+    "jest": "^24.9.0",
+    "mongodb-memory-server": "^6.2.1",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-joi-validation": "^5.0.0",
+    "helmet": "^4.4.1",
+    "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.4",
+    "mongoose-long": "^0.2.1",
+    "morgan": "^1.10.0"
+  }
+}

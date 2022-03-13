@@ -1,0 +1,13 @@
+# Dependency directories
+node_modules/
+
+
+# the all editor specific folder
+.idea
+.vscode
+
+
+# .env
+.env
+
+test.js
