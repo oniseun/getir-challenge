@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "ec6eff67-2d12-439a-85c9-25d3e73a73ff",
+		"name": "Getir Nodejs Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/health",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Record",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"startDate\": \"2016-01-26\",\n\"endDate\": \"2018-02-02\",\n\"minCount\": 2700,\n\"maxCount\": 3000\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/find/record",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"find",
+						"record"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
