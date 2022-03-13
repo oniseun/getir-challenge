@@ -12,7 +12,7 @@ app.use(helmet())
 app.use(cors({
     origin: true,
     credentials: true,
-    methods: ['GET', 'POST', 'DELETE'],
+    methods: ['GET', 'POST'],
     exposedHeaders: ['Authorization', 'Content-Type', 'X-Entity', 'X-Browser-Token']
   }))
 morgan.token('payload', (req) => `${JSON.stringify(req.params)} - ${JSON.stringify(req.query)}`)
