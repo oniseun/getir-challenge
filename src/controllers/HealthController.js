@@ -2,9 +2,10 @@
 const pjson = require('../../package.json')
 const config = require('../config/config')
 const healthchecks = require('../models/healthchecks')
+const { StatusCodes } =  require('http-status-codes')
 
 module.exports.info = function(req, res) {
-  res.status(200).json({
+  res.status(StatusCodes.OK).json({
     name: pjson.name,
     description: pjson.description,
     version: pjson.version,
@@ -13,7 +14,7 @@ module.exports.info = function(req, res) {
 }
 
 module.exports.ping = function(req, res) {
-  res.status(200).send('Pong !')
+  res.status(StatusCodes.OK).send('Pong !')
 }
 
 let checks = [
@@ -35,6 +36,6 @@ module.exports.health = function(req, res) {
     })
   )
   return Promise.all(results).then((results) => {
-    res.status(200).json({ checks: results })
+    res.status(StatusCodes.OK).json({ checks: results })
   })
 }

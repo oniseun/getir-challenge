@@ -1,5 +1,6 @@
-const AppResponse = require('../models/response/AppResponse')
+const ErrorResponse = require('../models/response/ErrorResponse')
 const enums = require('../config/enums')
+const { StatusCodes } =  require('http-status-codes')
 
 module.exports = function expressValidator(err, req, res, next) {  
 
@@ -7,7 +8,7 @@ module.exports = function expressValidator(err, req, res, next) {
 
         console.error('validation error::', JSON.stringify(err.error))
 
-        return res.status(400).json( new AppResponse(enums.RESPONSE_CODE.INVALID_INPUT, enums.RESPONSE_MSG.INVALID_INPUT, [err.error.message, err.error]));
+        return res.status(StatusCodes.BAD_REQUEST).json( new ErrorResponse(enums.RESPONSE_CODE.INVALID_INPUT, enums.RESPONSE_MSG.INVALID_INPUT, [err.error.message, err.error]));
 
       } else {
         return next(err);

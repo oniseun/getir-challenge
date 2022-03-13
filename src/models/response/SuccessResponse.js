@@ -1,4 +1,4 @@
-module.exports = class AppResponse {
+module.exports = class SuccessResponse {
   /**
      * @param {Number} code
      * @param {String} msg
