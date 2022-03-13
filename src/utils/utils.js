@@ -1,7 +1,8 @@
 'use strict'
 const config = require('../config/config')
 const mongoose = require('mongoose')
-mongoose.Promise = global.Promise
+const bluebird = require('bluebird');
+mongoose.Promise = bluebird
 
 const mongoUri = config.db.url
 const mongoOptions = config.db.options || {}

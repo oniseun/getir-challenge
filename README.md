@@ -6,6 +6,13 @@ provided MongoDB collection and return the results in the requested format.
 ## Build Setup
 
 ``` bash
+# Resources
+- Node.js 12+
+- Npm
+- Docker
+- Postman
+- Mongodb
+
 # install dependencies
 $ yarn install
 
@@ -14,7 +21,10 @@ $ yarn install
 
 
 # Import environment and collection on postman
-> Import postman collection and environment from Getir-Nodejs-Challenge.postman_collection and Getir-Nodejs-Challenge.postman_environment in the /docs folder
+> Import postman collection and environment from the /src/docs folder
+
+# run test with
+$ yarn test
 
 # serve with hot reload at localhost:3000
 $ yarn dev

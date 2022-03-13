@@ -17,6 +17,17 @@ const testRecords = [
     }
 ]
 
+const res = {
+    send: function(data){ 
+        return data
+    },
+    json: function(json){
+        return json
+    },
+    status: function(responseStatus) {
+        return this; 
+    }
+}
 
 describe('RecordController ', function () {
 
@@ -44,17 +55,7 @@ describe('RecordController ', function () {
                 }
             }
 
-            const res = {
-                send: function(data){ 
-                    return data
-                },
-                json: function(json){
-                    return json
-                },
-                status: function(responseStatus) {
-                    return this; 
-                }
-            }
+            
             const response = await RecordController.findRecord(req, res);
 
             const { code, msg, records } = response;

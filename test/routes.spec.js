@@ -132,6 +132,7 @@ describe('POST /find/record', function() {
         .end(function(err, res ) {
           expect(res.body).to.have.property('records')
           expect(res.body.msg).to.be.equal(enums.RESPONSE_MSG.SUCCESS)
+          expect(res.body.records instanceof Array).to.be.true
           if (err) return done(err);
           return done();
         })
