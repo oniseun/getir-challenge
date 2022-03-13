@@ -1,9 +1,9 @@
 
-const RecordModel = require('../models/Record')
+const Record = require('../models/Record')
 
 module.exports.findRecord = async ({ startDate, endDate, minCount, maxCount }) => {
 
-  const items = await RecordModel.Model.aggregate([
+  const items = await Record.Model.aggregate([
     {
       $match: {
         createdAt: { $gte: new Date(startDate), $lt: new Date(endDate) }

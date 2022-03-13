@@ -17,7 +17,7 @@ class RecordController {
         return res.status(200).json(new AppResponse(enums.RESPONSE_CODE.SUCCESS, enums.RESPONSE_MSG.SUCCESS, items))
       })
       .catch((err) => {
-        console.log(err)
+        console.error(err)
         return res.status(503).json(new AppResponse( enums.RESPONSE_CODE.FAILED, enums.RESPONSE_MSG.FAILED, [err] ))
       });
   }
