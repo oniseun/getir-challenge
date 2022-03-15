@@ -21,7 +21,7 @@ $ yarn install
 
 
 # Import environment and collection on postman
-> Import postman collection and environment for local and live from the /src/docs folder
+> Import postman collection and environment for local and live from the /docs folder
 
 # run test with
 $ yarn test
